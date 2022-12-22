@@ -100,9 +100,7 @@ def showGame():
                 
                 if game.getQntdTentativas() == 0:
                     send_msg_to_all("[C-LOSE] - Tentativas excedidas!")
-                    print()
-                    print(game.hashDisplay())
-                    print("Acabou as chances") #aqui
+                     #aqui
                     canPlay = False
                     break 
                 
@@ -114,6 +112,11 @@ def showGame():
                 # Assim que o jogador termina de fazer a sua ação, ele liberará a área crítica, diminuindo o release.
 
         print("\nJogo finalizado...")
+        print()
+        
+        
+        print(game.hashDisplay())
+        print("Acabou as chances")
             
         send_msg(players[0], '[C-OPTION]')
         
