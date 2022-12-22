@@ -82,7 +82,7 @@ def showGame():
     # Mandando informações para todos os clientes
     print(game.getInformations())
     send_msg_to_all(game.getInformations())
-    
+
     while True:
         # enquanto não descobriu a palavra e a quantidade de tentativas for maior que 0
         while not game.descobriuPalavra() and game.getQntdTentativas() > 0: 
@@ -95,12 +95,13 @@ def showGame():
                 
                 if game.descobriuPalavra():
                     send_msg_to_all("[C-WIN] - Palavra encontrada!") #aqui
-                    print(game.hashDisplay())
+                    print(game.
+                    hashDisplay())
                     break
-                
+
                 if game.getQntdTentativas() == 0:
                     send_msg_to_all("[C-LOSE] - Tentativas excedidas!")
-                     #aqui
+                    print("Jogo Finalizado!")
                     canPlay = False
                     break 
                 
@@ -111,30 +112,8 @@ def showGame():
                 # Se for a vez do jogador ele poderá jogar graças ao release, caso não, ele ficará impossibilitado de jogar
                 # Assim que o jogador termina de fazer a sua ação, ele liberará a área crítica, diminuindo o release.
 
-        print("\nJogo finalizado...")
-        print()
-        
-        
-        print(game.hashDisplay())
-        print("Acabou as chances")
-            
-        send_msg(players[0], '[C-OPTION]')
-        
-        
-        opcao = receive_msg(players[0])
-        print("opcao: ", opcao)
-        
-        if opcao.upper() == "S":
-            print("entrou")
-            game.resetar(word, tip)
-            mutex_letra.release() # Semáforo para liberar a área crítica, o release diminuí 1
-            podeJogar = False
-            
-        else:
-            print("\nFinalizando...")
-            for jogador in players.values():
-                jogador.close()
-            break
+                print("Jogo Finalizado!")
+                break
 
 
 def changeLetra(client_socket):

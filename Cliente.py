@@ -44,10 +44,6 @@ if __name__ == "__main__":
             print(msg_game.get(msg_serv))
             send_message()
             
-        elif msg_serv == "[C-OPTION]":
-            print(msg_game.get(msg_serv))
-            send_message()
-            
         elif msg_serv == '[C-INVALID]':
             print(msg_error.get(msg_serv))
             
