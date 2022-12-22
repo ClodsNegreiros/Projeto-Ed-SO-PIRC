@@ -11,7 +11,7 @@ client.connect(ip_port)
 
 
 def receive_message():
-    msg_serv = client.recv(1024).decode()
+    msg_serv = client.recv(1024).decode() # 
     print(msg_serv)
     return msg_serv
     

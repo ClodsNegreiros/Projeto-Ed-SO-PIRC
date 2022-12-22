@@ -64,6 +64,7 @@ def get_jogadores(sock):
     # Enquanto a quantidade de jogadores pré-definidas não for a quantidade que tem conectada, o jogo não inicia
     while connected_players != amount_players: # Enquanto o número de jogadores não for igual ao número de jogadores específicados
         client_socket, cliente_adr = sock.accept() # Ele continua aceitando as conexões
+        # Ele vai pegar um objeto e esperar uma conexão, assim que o cliente for aceito na conexão, ele irá se conectar. Ele retornará um array, primeiro índice = objeto socket do cliente que se conectou, e o segundo o endereço que ele se conectou 
         
         players[connected_players] = client_socket # o jogador recebendo a permissão
         connected_players += 1 # contando a quantidade de jogadores conectados
